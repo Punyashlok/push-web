@@ -12,12 +12,12 @@ push.setVapidDetails('mailto:punyashlok.com@gmail.com', vapidKeys.publicKey, vap
 
 async function subscribe (){
             let sw = await navigator.serviceWorker.ready;
-            let push = await sw.pushManager.subscribe({
+            let pushmsg = await sw.pushManager.subscribe({
                 userVisibleOnly:true,
                 applicationServerKey:'BKB4N-zY4mSuEscN1GQ62dpLZ4gndWGX9OSrsdx413Wk7vcHmH5wCTT6k9yHxzylpnMEHRb0gOYHEFv1xKoQ-ZM'
             })
-            console.log(JSON.stringify(push));
-            console.log(push);
+            console.log(JSON.stringify(pushmsg));
+            console.log(pushmsg);
           }
 
 let sub1 = {"endpoint":"https://fcm.googleapis.com/fcm/send/d54A-Qnn7SE:APA91bEB00lpRL5QnRJ7bITeSWmdf3NxsiMS5bf4Xd2UCdNN8Lx-Jb2wakRb1oV80aLYBsgsttrX4u7ehBFRAYg0KqsktaQAvMH69nvA938PsQXcijS3NC4sCD6E-2XSXPDQrEOZD08u",
