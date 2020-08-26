@@ -19,4 +19,4 @@ let sub2 = {"endpoint":"https://fcm.googleapis.com/fcm/send/fmZARFRVQrY:APA91bFd
 
 
 push.sendNotification(sub1,'Hello World');
-push.sendNotification(sub2,'NIce to see this !!');
+push.sendNotification(sub2,'');
