@@ -3,14 +3,14 @@ self.addEventListener('push', (e) => {
 
     var options = {
         body:'Notification generated from a push !',
-        icon:'images/example.png',
+        icon:'https://cdn2.iconfinder.com/data/icons/mixed-rounded-flat-icon/512/megaphone-64.png',
         vibrate:[100,50,100],
         data:{
             dateOfArrival: Date.now(),
             primaryKey: 2
         },
         actions: [
-            {action: 'explore', title: 'Explore web-push', icon:'https://cdn2.iconfinder.com/data/icons/mixed-rounded-flat-icon/512/megaphone-64.png'},
+            {action: 'explore', title: 'Explore web-push', icon:''},
             {action: 'close', title: 'close', icon:'images/xmark.png'}
         ]
     };
