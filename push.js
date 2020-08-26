@@ -17,6 +17,6 @@ let sub2 = {"endpoint":"https://fcm.googleapis.com/fcm/send/fmZARFRVQrY:APA91bFd
             "expirationTime":null,
             "keys":{"p256dh":"BJEpsF3qk6Rl8XWPu1Os0igNToeL_4oxc_6wf3KNo_nh6JhKvRnAiMhf6NwPvczCbFZ11L3n5Xbi6hFpEZUKjDA","auth":"RQwKkpU6WYtg7GI6CS_PCQ"}};
 
-let sub = {sub1,sub2};
+let sub = [sub1,sub2];
 
 push.sendNotification(sub,'Hello World');
