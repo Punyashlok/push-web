@@ -26,6 +26,11 @@ let sub3 = {"endpoint":"https://fcm.googleapis.com/fcm/send/c3cfPu213iI:APA91bHr
 
 let sub4 = {"endpoint":"https://updates.push.services.mozilla.com/wpush/v2/gAAAAABfSVXnawoIpgsdME6OgpdZNSm3tYJf6vslBDnwy58joBiZqXMHP_fRTju_WL9HEnIZ2RQR-5QKpCgOlc1TZSLvaWrPIsawPgmheA7Wx3P4QVEj5oTzbuKSUXGBsfz4oEYj2bsgQgLDXDZ9DNMoaU3Xt-FzSIFuq8nrBZbCAxbreJFkddo",
            "keys":{"auth":"APgafQYSuCmEn60QcZv8EA","p256dh":"BJvK_5fAwB0clZgL3EmqHgbVN69OuyNOq9XdOEYegoi-UXVf_jUKaiT91RX8O29sunJ6W0lw7bO1XqLpi7h6_oU"}} //Nafiz firefox - windows
+
+let sub5 = {"endpoint":"https://fcm.googleapis.com/fcm/send/dwiGKN2ps-Y:APA91bEEyXXaA-oltHc9jXfTLsyGueF1LVZ04q2BdSWSyGBsoiBOeyuUFWZHBFFHrAIOl9oKuQMLA0icaZxwoBMCPpHASz4yLJbhr9pCvg-KIOQZ_IFk142EQQ_KPj6zpEKvLC1sdcw7",
+            "expirationTime":null,
+            "keys":{"p256dh":"BIhjo2Bvv9lWpDndeNPr4ZpclJkge9keHM3RHLgQW07KeKt5c7q3yB8CGMNPI_UqWIV4KHfkJu19O9gEiifJw9s","auth":"gcfPuPmeEWBWneZsK7_URA"}} //Nafiz chrome - windows
+
 /*let sub = {
            "endpoint":pushmsg.endpoint,
            "expirationTime":null,
