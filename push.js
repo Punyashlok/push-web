@@ -19,6 +19,13 @@ let sub2 = {"endpoint":"https://fcm.googleapis.com/fcm/send/eIUkjYdT8xg:APA91bGb
             "expirationTime":null,
             "keys":{"p256dh":"BMbOo4fBaXqBW3pFQnhPiDt0TuhOzzGPkokABvgc6Id05PudYOHtLOfZIetq2sdRi5R7GmRamgIUWcDP-eXOYRM","auth":"_LhrjFnL543sJWCyTXwwtQ"}}
 
+
+let sub3 = {"endpoint":"https://fcm.googleapis.com/fcm/send/c3cfPu213iI:APA91bHr8f-vhq9E8GgdgiH8hdZPaChkOv-Wocxf9yVIgOWd1MmZ2K9wosUJ99mt4EZfHiiRJ-jZmHRUngSIKhfGDYrGz3zvIGc6N4fyBn12J8OIBlNoRC9PkefP_DJDFuDYqAEjoUZS",
+            "expirationTime":null,
+            "keys":{"p256dh":"BNNdbi2HpIKGPQpH3X0FZc-UKtbfy08HFEFzMjQOVcAs13fbEvqfZQ3zU2a2dOQ7J3Vva5awIDnQX-AM1nVn5Js","auth":"rAZh1yP3lW6VPoLMPEeIIg"}} // Nafiz linux - chorimium
+
+let sub4 = {"endpoint":"https://updates.push.services.mozilla.com/wpush/v2/gAAAAABfSVXnawoIpgsdME6OgpdZNSm3tYJf6vslBDnwy58joBiZqXMHP_fRTju_WL9HEnIZ2RQR-5QKpCgOlc1TZSLvaWrPIsawPgmheA7Wx3P4QVEj5oTzbuKSUXGBsfz4oEYj2bsgQgLDXDZ9DNMoaU3Xt-FzSIFuq8nrBZbCAxbreJFkddo",
+           "keys":{"auth":"APgafQYSuCmEn60QcZv8EA","p256dh":"BJvK_5fAwB0clZgL3EmqHgbVN69OuyNOq9XdOEYegoi-UXVf_jUKaiT91RX8O29sunJ6W0lw7bO1XqLpi7h6_oU"}} //Nafiz firefox - windows
 /*let sub = {
            "endpoint":pushmsg.endpoint,
            "expirationTime":null,
