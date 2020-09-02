@@ -11,8 +11,22 @@ self.addEventListener('push', (e) => {
         },
         actions: [
             {action: 'explore', title: 'Explore web-push', icon:''},
+            {action: 'check', title: 'Check website', icon:''},
             {action: 'close', title: 'close', icon:'images/xmark.png'}
         ]
     };
     e.waitUntil(self.registration.showNotification('Hello World',options));
 })
+
+self.addEventListener('notificationclick', function(event) {
+
+        switch(event.action){
+            case 'explore':
+                clients.openWindow(event.notification.data.url); //which we got from above
+                break;
+            case 'check':
+                clients.openWindow("https://www.youtube.com");
+                break;
+        }
+    }
+    , false);
