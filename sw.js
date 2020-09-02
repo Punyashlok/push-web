@@ -1,6 +1,6 @@
 self.addEventListener('push', (e) => {
     //self.registration.sendNotification('Hello World', {});
-
+    var content = e.data.text();
     var options = {
         body:'Notification generated from a push !',
         icon:'https://cdn2.iconfinder.com/data/icons/mixed-rounded-flat-icon/512/megaphone-64.png',
@@ -15,7 +15,7 @@ self.addEventListener('push', (e) => {
             {action: 'close', title: 'close', icon:'images/xmark.png'}
         ]
     };
-    e.waitUntil(self.registration.showNotification('Hello World',options));
+    e.waitUntil(self.registration.showNotification(content,options));
 })
 
 self.addEventListener('notificationclick', function(event) {
