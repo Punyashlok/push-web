@@ -6,6 +6,7 @@
 </head>
 <body>
     <button onclick="subscribe()">Subscribe</button>
+    <button onclick="unsubscribe()">Unsubscribe</button>
 
     <script>
 
@@ -22,6 +23,20 @@
             })
             console.log(JSON.stringify(push))
         }
+
+        function unsubscribe()
+        {
+            navigator.serviceWorker.ready.then(function(reg) {
+                reg.pushManager.getSubscription().then(function(subscription) {
+                    subscription.unsubscribe().then(function(successful) {
+                        console.log('You have unsubscribed');
+                    }).catch(function(e) {
+                        console.log('Unsubscription failed');
+                    })
+                })
+            });
+        }
+
     </script>
    <!-- <script src="push.js"></script> -->
 </body>
