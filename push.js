@@ -11,9 +11,9 @@ push.setVapidDetails('mailto:punyashlok.com@gmail.com', vapidKeys.publicKey, vap
 
 var payload = 'Click to interact';
 
-let sub1 = {"endpoint":"https://fcm.googleapis.com/fcm/send/fi1KfYSxd_s:APA91bH-7q3kEQxwdb6XjNEqw3swofPS-Xr-kFzXexTG8hJePn8pkSLlDdXXXT9u3QNs2UjGv2bjMv0Q2cdCUISb1dNjDJDWiQmYPhfNjuGWe9e5gr_JKMR-V_YMBA5Kq_uvUhsBOLHO",
+let sub1 = {"endpoint":"https://fcm.googleapis.com/fcm/send/f3UrJbw7Z_k:APA91bH_fElCABIgjK_NNy4yCbHv47wkJHa2fjp6ljB9aMVmUWSBUYOAjgcb3u71rDbKl7QjKlYKECmW9sVSvkEZSQpDhUDW53U0HS9L695L198YEwjIA--Tm2bINIOyGCPYRoldahba",
             "expirationTime":null,
-            "keys":{"p256dh":"BI9ApJfScrx7MFPeQeAVcapTzzUkbdNNNJ1yhxwzZinOE6B8jqXWM2SRMdXzYinuywqmr0oZekD4Rxp9fSiWvSI","auth":"-a0LPuMDFCwdyqkAtA_PmQ"}}
+            "keys":{"p256dh":"BJyD9Z9_CYUXinmqXrBFEuWQaFpXOAfkhg46gTQ2KN9VOPXcYRCP04liwKXkTNeNQP-BwzsVHgZn4mxu2Xt2odU","auth":"OcidYd1WFYv0IkJNZZrHTg"}}
 
 let sub2 = {"endpoint":"https://fcm.googleapis.com/fcm/send/d4hOSNFFaQk:APA91bFEHs-GRCpNMtL9_l17DWytmF6BqYB72tudt3YG3cM7gfI1RR6Z7Ic0vw-V2gV5aPShmNw1Ex7dCAFlFsc0Ps4bIwcyRO2i55oINGtr3dJgFSxMlWrJJRPYw-UH5I9T0faz3g7p",
             "expirationTime":null,
