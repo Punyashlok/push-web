@@ -37,9 +37,9 @@ let sub5 = {"endpoint":"https://fcm.googleapis.com/fcm/send/dwiGKN2ps-Y:APA91bEE
 
 }*/
 
-push.sendNotification(sub1,payload,'Hello World');
-push.sendNotification(sub2,payload,'HI');
-push.sendNotification(sub4,payload,'Hello');
+push.sendNotification(sub1,'Hello World');
+push.sendNotification(sub2,'HI');
+push.sendNotification(sub4,'Hello');
 push.sendNotification(sub3, "Hello World");
 push.sendNotification(sub5, "Hi nafiz");
 
