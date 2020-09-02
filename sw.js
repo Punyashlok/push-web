@@ -8,7 +8,7 @@ self.addEventListener('push', (e) => {
         data:{
             dateOfArrival: Date.now(),
             primaryKey: 2,
-            url:"https://www.fb.com" //URL added new
+            url:"https://www.youtube.com" //URL added new
         },
         actions: [
             {action: 'explore', title: 'Open Website', icon:''},
@@ -22,7 +22,7 @@ self.addEventListener('notificationclick', function(event) {
 
         switch(event.action){
             case 'explore':
-                clients.openWindow(event.notification.data.url); //which we got from above
+                clients.openWindow(event.notification.data.url); //opens webpage
                 break;
             /*case 'check':
                 clients.openWindow("https://www.youtube.com");
