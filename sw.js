@@ -22,7 +22,7 @@ self.addEventListener('notificationclick', function(event) {
 
         switch(event.action){
             case 'explore':
-                clients.openWindow(event.notification.data.url); //opens webpage
+                clients.openWindow(event.notification.data.url); //opens webpage Note: Prompt user to refresh their page/or prompt resubsciption. Allows changes to show
                 break;
             /*case 'check':
                 clients.openWindow("https://www.youtube.com");
