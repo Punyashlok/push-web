@@ -8,8 +8,9 @@ self.addEventListener('push', (e) => {
         data:{
             dateOfArrival: Date.now(),
             primaryKey: 2,
-            url:"https://www.youtube.com"
+
         },
+        click_action : "https://www.fb.com",
         actions: [
             {action: 'explore', title: 'Open Website', icon:''},
             {action: 'close', title: 'close', icon:'images/xmark.png'}
