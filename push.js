@@ -9,7 +9,7 @@ push.setVapidDetails('mailto:punyashlok.com@gmail.com', vapidKeys.publicKey, vap
 
 //Pull out from db of stored/registered people who want to receive notifications. Its the result of pushManager.subscribe in index.html
 
-var payload = 'https://www.youtube.com';
+var payload = 'Click to interact';
 
 let sub1 = {"endpoint":"https://fcm.googleapis.com/fcm/send/d54A-Qnn7SE:APA91bEB00lpRL5QnRJ7bITeSWmdf3NxsiMS5bf4Xd2UCdNN8Lx-Jb2wakRb1oV80aLYBsgsttrX4u7ehBFRAYg0KqsktaQAvMH69nvA938PsQXcijS3NC4sCD6E-2XSXPDQrEOZD08u",
              "expirationTime":null,
@@ -39,7 +39,7 @@ let sub5 = {"endpoint":"https://fcm.googleapis.com/fcm/send/dwiGKN2ps-Y:APA91bEE
 
 push.sendNotification(sub1,payload);
 push.sendNotification(sub2,payload);
-push.sendNotification(sub4,'Hello');
-push.sendNotification(sub3, "Hello World");
-push.sendNotification(sub5, "Hi nafiz");
+push.sendNotification(sub4,payload);
+push.sendNotification(sub3,payload);
+push.sendNotification(sub5,payload);
 
