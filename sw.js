@@ -7,11 +7,11 @@ self.addEventListener('push', (e) => {
         vibrate:[100,50,100],
         data:{
             dateOfArrival: Date.now(),
-            primaryKey: 2
+            primaryKey: 2,
+            url:"https://www.youtube.com"
         },
         actions: [
-            {action: 'explore', title: 'Explore web-push', icon:''},
-            {action: 'check', title: 'Check website', icon:''},
+            {action: 'explore', title: 'Open Website', icon:''},
             {action: 'close', title: 'close', icon:'images/xmark.png'}
         ]
     };
@@ -24,9 +24,9 @@ self.addEventListener('notificationclick', function(event) {
             case 'explore':
                 clients.openWindow(event.notification.data.url); //which we got from above
                 break;
-            case 'check':
+            /*case 'check':
                 clients.openWindow("https://www.youtube.com");
-                break;
+                break;*/
         }
     }
     , false);
