@@ -11,7 +11,7 @@ self.addEventListener('push', (e) => {
             url: content//URL added new
         },
         actions: [
-            {action: 'drive', title: 'Open Google meet', icon:''},
+            {action: 'Google-Meet', title: 'Open Google meet', icon:''},
             {action: 'jitsi', title: 'Open jitsi', icon:''},
             {action: 'close', title: 'close', icon:'images/xmark.png'}
         ]
@@ -22,8 +22,8 @@ self.addEventListener('push', (e) => {
 self.addEventListener('notificationclick', function(event) {
 
         switch(event.action){
-            case 'drive':
-                clients.openWindow('https://www.drive.google.com'); //opens webpage Note: Prompt user to refresh their page/or prompt resubsciption. Allows changes to show
+            case 'Google-Meet':
+                clients.openWindow('https://www.meet.google.com'); //opens webpage Note: Prompt user to refresh their page/or prompt resubsciption. Allows changes to show
                 break;
 
             case 'jitsi':
