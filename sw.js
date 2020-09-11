@@ -8,7 +8,7 @@ self.addEventListener('push', (e) => {
         data:{
             dateOfArrival: Date.now(),
             primaryKey: 2,
-            url:"https://www.youtube.com" //URL added new
+            url: content//URL added new
         },
         actions: [
             {action: 'explore', title: 'Open Website', icon:''},
@@ -22,8 +22,11 @@ self.addEventListener('notificationclick', function(event) {
 
         switch(event.action){
             case 'explore':
-                clients.openWindow(event.notification.data.url); //opens webpage Note: Prompt user to refresh their page/or prompt resubsciption. Allows changes to show
+                clients.openWindow('https://www.instagram.com'); //opens webpage Note: Prompt user to refresh their page/or prompt resubsciption. Allows changes to show
                 break;
+
+            default:
+                clients.openWindow(event.notification.data.url);
             /*case 'check':
                 clients.openWindow("https://www.youtube.com");
                 break;*/

@@ -1,6 +1,7 @@
 var push = require('web-push');
 
-//let vapidKeys = push.generateVapidKeys(); Once generated store the results in a variable as done below.
+//let vapidKeys = push.generateVAPIDKeys(); //Once generated store the results in a variable as done below.
+//console.log(vapidKeys1);
 
 let vapidKeys = { publicKey: 'BKB4N-zY4mSuEscN1GQ62dpLZ4gndWGX9OSrsdx413Wk7vcHmH5wCTT6k9yHxzylpnMEHRb0gOYHEFv1xKoQ-ZM',
                   privateKey: 'RmlSql9Elxf3DOg3eCiJ3ZPCLpM2Ti4qyfFPaQvJoEk' }
@@ -9,7 +10,7 @@ push.setVapidDetails('mailto:punyashlok.com@gmail.com', vapidKeys.publicKey, vap
 
 //Pull out from db of stored/registered people who want to receive notifications. Its the result of pushManager.subscribe in index.html
 
-var payload = 'Click to interact';
+var payload = 'https://www.youtube.com';
 
 let sub1 = {"endpoint":"https://fcm.googleapis.com/fcm/send/f3UrJbw7Z_k:APA91bH_fElCABIgjK_NNy4yCbHv47wkJHa2fjp6ljB9aMVmUWSBUYOAjgcb3u71rDbKl7QjKlYKECmW9sVSvkEZSQpDhUDW53U0HS9L695L198YEwjIA--Tm2bINIOyGCPYRoldahba",
             "expirationTime":null,
@@ -39,7 +40,8 @@ let sub5 = {"endpoint":"https://fcm.googleapis.com/fcm/send/dwiGKN2ps-Y:APA91bEE
 
 push.sendNotification(sub1,payload);
 push.sendNotification(sub2,payload);
-push.sendNotification(sub4,payload);
+
+/*push.sendNotification(sub4,payload);
 push.sendNotification(sub3,payload);
-push.sendNotification(sub5,payload);
+push.sendNotification(sub5,payload);*/
 
