@@ -2,7 +2,7 @@ self.addEventListener('push', (e) => {
     //self.registration.sendNotification('Hello World', {});
     var content = e.data.text();
     var options = {
-        body:'Notification generated from a push !',
+        body:'Click on the badge to visit the website !',
         icon:'https://cdn2.iconfinder.com/data/icons/mixed-rounded-flat-icon/512/megaphone-64.png',
         vibrate:[100,50,100],
         data:{
@@ -11,7 +11,8 @@ self.addEventListener('push', (e) => {
             url: content//URL added new
         },
         actions: [
-            {action: 'explore', title: 'Open Website', icon:''},
+            {action: 'drive', title: 'Open Google meet', icon:''},
+            {action: 'jitsi', title: 'Open jitsi', icon:''},
             {action: 'close', title: 'close', icon:'images/xmark.png'}
         ]
     };
@@ -21,9 +22,12 @@ self.addEventListener('push', (e) => {
 self.addEventListener('notificationclick', function(event) {
 
         switch(event.action){
-            case 'explore':
-                clients.openWindow('https://www.instagram.com'); //opens webpage Note: Prompt user to refresh their page/or prompt resubsciption. Allows changes to show
+            case 'drive':
+                clients.openWindow('https://www.drive.google.com'); //opens webpage Note: Prompt user to refresh their page/or prompt resubsciption. Allows changes to show
                 break;
+
+            case 'jitsi':
+                clients.openWindow('https://jitsi.org/');
 
             default:
                 clients.openWindow(event.notification.data.url);
