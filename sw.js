@@ -10,7 +10,7 @@ self.addEventListener('push', (e) => {
             dateOfArrival: Date.now(),
             primaryKey: 2,
             url: content, //URL added new
-            timestamp: dateOfArrival + 3000
+            timestamp: Date.now() + 3000
         },
         actions: [
             {action: 'Google-Meet', title: 'Open Google meet', icon:''},
