@@ -1,3 +1,4 @@
+let notification;
 self.addEventListener('push', (e) => {
     //self.registration.sendNotification('Hello World', {});
     var content = e.data.text();
@@ -8,7 +9,8 @@ self.addEventListener('push', (e) => {
         data:{
             dateOfArrival: Date.now(),
             primaryKey: 2,
-            url: content//URL added new
+            url: content, //URL added new
+            timestamp: dateOfArrival + 3000
         },
         actions: [
             {action: 'Google-Meet', title: 'Open Google meet', icon:''},
@@ -16,7 +18,8 @@ self.addEventListener('push', (e) => {
             {action: 'close', title: 'close', icon:'images/xmark.png'}
         ]
     };
-    e.waitUntil(self.registration.showNotification(content,options));
+    notification = self.registration.showNotification(content,options);
+    e.waitUntil(notification);
 })
 
 self.addEventListener('notificationclick', function(event) {
@@ -35,6 +38,6 @@ self.addEventListener('notificationclick', function(event) {
                 clients.openWindow("https://www.youtube.com");
                 break;*/
         }
-        event.close();
+
     }
     , false);
