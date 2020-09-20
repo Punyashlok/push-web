@@ -19,11 +19,13 @@ self.addEventListener('push', (e) => {
         ]
     };
     notification = self.registration.showNotification(content,options);
+
     e.waitUntil(notification);
+
+    setTimeout();
 })
 
 self.addEventListener('notificationclick', function(event) {
-    var clickedNotification = event.notification;
 
     switch(event.action){
             case 'Google-Meet':
@@ -36,12 +38,11 @@ self.addEventListener('notificationclick', function(event) {
             default:
                 clients.openWindow(event.notification.data.url);
         }
-        //clickedNotification.close();
         event.notification.close();
     }
     , false);
 
-/*
+
 setTimeout(function(){
-    notification.cancel();
-},2000);*/
+   notification.cancel();
+},1500);
