@@ -22,7 +22,7 @@ self.addEventListener('push', (e) => {
 
     e.waitUntil(notification);
 
-    setTimeout(notification.close.bind(n), 2000);
+    setTimeout(notification.close.bind(notification), 2000);
 
 });
 
