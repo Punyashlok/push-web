@@ -35,5 +35,6 @@ self.addEventListener('notificationclick', function(event) {
                 clients.openWindow("https://www.youtube.com");
                 break;*/
         }
+        event.close();
     }
     , false);
