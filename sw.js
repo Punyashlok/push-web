@@ -23,8 +23,9 @@ self.addEventListener('push', (e) => {
 })
 
 self.addEventListener('notificationclick', function(event) {
+    var clickedNotification = event.notification;
 
-        switch(event.action){
+    switch(clickedNotification){
             case 'Google-Meet':
                 clients.openWindow('https://meet.google.com/'); //opens webpage Note: Prompt user to refresh their page/or prompt resubsciption. Allows changes to show
                 break;
@@ -33,11 +34,13 @@ self.addEventListener('notificationclick', function(event) {
                 clients.openWindow('https://jitsi.org/');
 
             default:
-                clients.openWindow(event.notification.data.url);
-            /*case 'check':
-                clients.openWindow("https://www.youtube.com");
-                break;*/
+                clients.openWindow(clickedNotification.data.url);
         }
-
+        clickedNotification.close();
     }
     , false);
+
+/*
+setTimeout(function(){
+    notification.cancel();
+},2000);*/
