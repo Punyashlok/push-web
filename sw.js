@@ -22,8 +22,9 @@ self.addEventListener('push', (e) => {
 
     e.waitUntil(notification);
 
-    setTimeout();
-})
+    setTimeout(notification.close.bind(n), 2000);
+
+});
 
 self.addEventListener('notificationclick', function(event) {
 
@@ -43,6 +44,6 @@ self.addEventListener('notificationclick', function(event) {
     , false);
 
 
-setTimeout(function(){
-   notification.cancel();
-},1500);
+/*setTimeout(function(){
+   notification.close();
+},1500);*/
