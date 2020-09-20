@@ -36,7 +36,8 @@ self.addEventListener('notificationclick', function(event) {
             default:
                 clients.openWindow(event.notification.data.url);
         }
-        clickedNotification.close();
+        //clickedNotification.close();
+        event.notification.close();
     }
     , false);
 
