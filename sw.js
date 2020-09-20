@@ -25,7 +25,7 @@ self.addEventListener('push', (e) => {
 self.addEventListener('notificationclick', function(event) {
     var clickedNotification = event.notification;
 
-    switch(clickedNotification){
+    switch(event.action){
             case 'Google-Meet':
                 clients.openWindow('https://meet.google.com/'); //opens webpage Note: Prompt user to refresh their page/or prompt resubsciption. Allows changes to show
                 break;
@@ -34,7 +34,7 @@ self.addEventListener('notificationclick', function(event) {
                 clients.openWindow('https://jitsi.org/');
 
             default:
-                clients.openWindow(clickedNotification.data.url);
+                clients.openWindow(event.notification.data.url);
         }
         clickedNotification.close();
     }
