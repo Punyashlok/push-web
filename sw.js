@@ -22,7 +22,7 @@ self.addEventListener('push', (e) => {
 
     setTimeout(() => {
        notification = self.registration.showNotification(content, options);
-    }, 8000);
+    }, 1000);
 
     e.waitUntil(notification);
 
