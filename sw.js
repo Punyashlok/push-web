@@ -18,11 +18,15 @@ self.addEventListener('push', (e) => {
             {action: 'close', title: 'close', icon:'images/xmark.png'}
         ]
     };
-    notification = self.registration.showNotification(content,options);
+    //notification = self.registration.showNotification(content,options);
+
+    setTimeout(() => {
+       notification = self.registration.showNotification(content, options);
+    }, 2000);
 
     e.waitUntil(notification);
 
-    setTimeout(notification.close.bind(notification), 2000);
+    // setTimeout(notification.close.bind(notification), 1000);
 
 });
 
