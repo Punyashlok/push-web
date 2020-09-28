@@ -35,8 +35,8 @@ self.addEventListener('notificationclick', function(event) {
     switch(event.action){
             case 'Google-Meet':
 
-                document.addEventListener("visibilitychange", function() {
-                    console.log( document.visibilityState );
+                self.addEventListener("visibilitychange", function() {
+                    console.log( window.document.visibilityState );
                     // Modify behavior...
                 })
                 //clients.openWindow('https://meet.google.com/'); //opens webpage Note: Prompt user to refresh their page/or prompt resubsciption. Allows changes to show
