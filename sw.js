@@ -35,7 +35,7 @@ self.addEventListener('notificationclick', function(event) {
     switch(event.action){
             case 'Google-Meet':
 
-                self.addEventListener("visibilitychange", function() {
+                window.document.addEventListener("visibilitychange", function() {
                     console.log( window.document.visibilityState );
                     // Modify behavior...
                 })
