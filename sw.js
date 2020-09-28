@@ -34,17 +34,17 @@ self.addEventListener('notificationclick', function(event) {
 
     switch(event.action){
             case 'Google-Meet':
-                self.addEventListener("visibilitychange", function() {
-                    console.log( self.visibilityState );
-                    // Modify behavior...
-                })
+
+                console.log( self.visibilityState );
                 clients.openWindow('https://meet.google.com/'); //opens webpage Note: Prompt user to refresh their page/or prompt resubsciption. Allows changes to show
                 break;
 
             case 'jitsi':
+
                 clients.openWindow('https://jitsi.org/');
 
             default:
+
                 clients.openWindow(event.notification.data.url);
         }
         event.notification.close();
