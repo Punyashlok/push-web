@@ -36,7 +36,8 @@ self.addEventListener('notificationclick', function(event) {
             case 'Google-Meet':
 
                 clients.openWindow('https://meet.google.com/');//opens webpage Note: Prompt user to refresh their page/or prompt resubsciption. Allows changes to show
-                console.log(WindowClient.visibilityState);
+                console.log(Client.visibilityState);
+                console.log(clients.visibilityState);
                 break;
 
             case 'jitsi':
