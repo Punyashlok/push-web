@@ -34,7 +34,16 @@ self.addEventListener('notificationclick', function(event) {
 
     switch(event.action){
             case 'Google-Meet':
-                clients.openWindow('https://meet.google.com/'); //opens webpage Note: Prompt user to refresh their page/or prompt resubsciption. Allows changes to show
+                document.addEventListener( 'visibilitychange' , function() {
+                    if (document.hidden) {
+                        console.log('bye');
+                    } else {
+                        console.log('well back');
+                        clients.openWindow('https://meet.google.com/');
+                    }
+                }, false );
+
+                //clients.openWindow('https://meet.google.com/'); //opens webpage Note: Prompt user to refresh their page/or prompt resubsciption. Allows changes to show
                 break;
 
             case 'jitsi':
