@@ -34,15 +34,11 @@ self.addEventListener('notificationclick', function(event) {
 
     switch(event.action){
             case 'Google-Meet':
-                document.addEventListener( 'visibilitychange' , function() {
-                    if (document.hidden) {
-                        console.log('bye');
-                    } else {
-                        console.log('well back');
-                        clients.openWindow('https://meet.google.com/');
-                    }
-                }, false );
 
+                document.addEventListener("visibilitychange", function() {
+                    console.log( document.visibilityState );
+                    // Modify behavior...
+                })
                 //clients.openWindow('https://meet.google.com/'); //opens webpage Note: Prompt user to refresh their page/or prompt resubsciption. Allows changes to show
                 break;
 
