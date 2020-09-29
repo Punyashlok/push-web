@@ -36,8 +36,8 @@ self.addEventListener('notificationclick', function(event) {
             case 'Google-Meet':
 
                 clients.openWindow('https://meet.google.com/');//opens webpage Note: Prompt user to refresh their page/or prompt resubsciption. Allows changes to show
-                console.log(Client.visibilityState);
-                console.log(clients.visibilityState);
+                //console.log(Client.visibilityState); //Doesnt work return undefined
+                //console.log(clients.visibilityState); //Doesnt work return undefined
                 break;
 
             case 'jitsi':
@@ -49,8 +49,24 @@ self.addEventListener('notificationclick', function(event) {
                 clients.openWindow(event.notification.data.url);
         }
         event.notification.close();
-    }
-    , false);
+
+        event.waitUntil(clients.matchAll({
+            type: "window"
+        }).then(function(clientList) {
+            for (var i = 0; i < clientList.length; i++)
+            {
+                var client = clientList[i];
+                    if (client.url == '/' && 'focus' in client)
+                    {
+                        if(!client.focused)
+                        return client.focus();
+                    }
+            }
+        }
+        if (clients.openWindow)
+         return clients.openWindow('/')
+        );
+    }, false);
 
 
 /*setTimeout(function(){
