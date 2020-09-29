@@ -46,14 +46,12 @@ self.addEventListener('notificationclick', function(event) {
 
             default:
 
-                clients.openWindow(event.notification.data.url);
-        }
-        event.notification.close();
+               // clients.openWindow(event.notification.data.url);
 
-         event.waitUntil(clients.matchAll(
-             {
-              type: "window"
-             }).then(function(clientList)
+                event.waitUntil(clients.matchAll(
+                    {
+                        type: "window"
+                    }).then(function(clientList)
                 {
                     for (var i = 0; i < clientList.length; i++)
                     {
@@ -62,15 +60,20 @@ self.addEventListener('notificationclick', function(event) {
                         console.log('client * '+ clientList[0]);
 
                         if (client.url == event.notification.data.url && 'focus' in client)
-                            {
-                                  if(!client.focused)
-                                      return client.focus();
-                            }
+                        {
+                            if(!client.focused)
+                                return client.focus();
+                        }
                     }
-                   if (clients.openWindow)
+                    if (clients.openWindow)
                         return clients.openWindow(event.notification.data.url);
 
                 }));
+
+        }
+        event.notification.close();
+
+
 
     }, false);
 
