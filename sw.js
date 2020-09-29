@@ -50,24 +50,25 @@ self.addEventListener('notificationclick', function(event) {
         }
         event.notification.close();
 
-        event.waitUntil(clients.matchAll({
-            type: "window"
-        }).then(function(clientList) {
-            for (var i = 0; i < clientList.length; i++)
-            {
-                var client = clientList[i];
-                console.log('client list '+ i + ' '+clientList );
-
-                if (client.url == '/' && 'focus' in client)
+         event.waitUntil(clients.matchAll(
+             {
+              type: "window"
+             }).then(function(clientList)
+                {
+                    for (var i = 0; i < clientList.length; i++)
                     {
-                        if(!client.focused)
-                        return client.focus();
+                        var client = clientList[i];
+                        if (client.url == '/' && 'focus' in client)
+                            {
+                                  if(!client.focused)
+                                      return client.focus();
+                            }
                     }
-            }
-        }
-        if (clients.openWindow)
-         return clients.openWindow('/')
-        );
+                    if (clients.openWindow)
+                        return clients.openWindow('/');
+
+                }));
+
     }, false);
 
 
