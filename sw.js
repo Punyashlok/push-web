@@ -59,7 +59,7 @@ self.addEventListener('notificationclick', function(event) {
                     {
                         var client = clientList[i];
 
-                        console.log('client * '+ clientList[i]);
+                        console.log('client * '+ clientList[0]);
 
                         if (client.url == '/' && 'focus' in client)
                             {
