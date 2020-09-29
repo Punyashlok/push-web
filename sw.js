@@ -58,6 +58,9 @@ self.addEventListener('notificationclick', function(event) {
                     for (var i = 0; i < clientList.length; i++)
                     {
                         var client = clientList[i];
+
+                        console.log('client * '+ client);
+
                         if (client.url == '/' && 'focus' in client)
                             {
                                   if(!client.focused)
