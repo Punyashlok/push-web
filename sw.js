@@ -57,16 +57,14 @@ self.addEventListener('notificationclick', function(event) {
                     {
                         var client = clientList[i];
 
-                        if (client.url === event.notification.data.url && client.focused) //'focus' in client
+                        if (client.url === event.notification.data.url && client.focus()) //'focus' in client
                         {
-                            console.log ('In side If');
                             if(!client.focused)
                                 return client.focus();
                         }
                     }
                     if ((clients.openWindow))
-                        console.log('Inside the else case');
-                        return clients.openWindow(event.notification.data.url);
+                        return clients.openWindow(event.notification.data.url).then();
 
                 }));
 
