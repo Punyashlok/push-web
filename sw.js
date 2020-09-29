@@ -48,30 +48,32 @@ self.addEventListener('notificationclick', function(event) {
 
                // clients.openWindow(event.notification.data.url);
 
-                event.waitUntil(clients.matchAll(
-                    {
-                        type: "window"
-                    }).then(function(clientList)
-                {
-                    for (var i = 0; i < clientList.length; i++)
-                    {
-                        var client = clientList[i];
 
-                        if (client.url === event.notification.data.url) //'focus' in client
-                        {
-                            if(!client.focused)
-                                return client.focus();
-                        }
-                    }
-                    if ((clients.openWindow))
-                        return clients.openWindow(event.notification.data.url);
-
-                }));
-
+                event.notification.close();
 
         }
 
-        event.notification.close();
+        //event.notification.close();
+
+        event.waitUntil(clients.matchAll(
+        {
+            type: "window"
+        }).then(function(clientList)
+        {
+        for (var i = 0; i < clientList.length; i++)
+        {
+            var client = clientList[i];
+
+            if (client.url === event.notification.data.url && 'focus' in client) // client.focused
+            {
+                if(!client.focused)
+                    return client.focus();
+            }
+        }
+            if ((clients.openWindow))
+                return clients.openWindow(event.notification.data.url);
+
+        }));
 
        /* event.waitUntil(clients.matchAll({ type: 'window' }).then(clientsArr => {
         // If a Window tab matching the targeted URL already exists, focus that;
