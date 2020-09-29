@@ -48,7 +48,7 @@ self.addEventListener('notificationclick', function(event) {
 
                // clients.openWindow(event.notification.data.url);
 
-                event.waitUntil(clients.matchAll(
+               /* event.waitUntil(clients.matchAll(
                     {
                         type: "window"
                     }).then(function(clientList)
@@ -66,7 +66,13 @@ self.addEventListener('notificationclick', function(event) {
                     if ((clients.openWindow))
                         return clients.openWindow(event.notification.data.url);
 
-                }));
+                }));*/
+
+                event.waitUntil(clients.matchAll({ type: 'window' }).then(clientsArr => {
+                    // If a Window tab matching the targeted URL already exists, focus that;
+                    const hadWindowToFocus = clientsArr.some(windowClient => windowClient.url === event.notification.data.url ? (windowClient.focus(), true) : false);
+                    // Otherwise, open a new tab to the applicable URL and focus it.
+                    if (!hadWindowToFocus) clients.openWindow(event.notification.data.url).then(windowClient => windowClient ? windowClient.focus() : null); }))
 
         }
         event.notification.close();
