@@ -59,6 +59,7 @@ self.addEventListener('notificationclick', function(event) {
 
                         if (client.url === event.notification.data.url && client.focused) //'focus' in client
                         {
+                            console.log ('In side If');
                             if(!client.focused)
                                 return client.focus();
                         }
