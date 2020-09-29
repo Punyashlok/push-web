@@ -61,14 +61,14 @@ self.addEventListener('notificationclick', function(event) {
 
                         console.log('client * '+ clientList[0]);
 
-                        if (client.url == url && 'focus' in client)
+                        if (client.url == event.notification.data.url && 'focus' in client)
                             {
                                   if(!client.focused)
                                       return client.focus();
                             }
                     }
                    if (clients.openWindow)
-                        return clients.openWindow(url);
+                        return clients.openWindow(event.notification.data.url);
 
                 }));
 
