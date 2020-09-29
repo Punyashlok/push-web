@@ -68,7 +68,7 @@ self.addEventListener('notificationclick', function(event) {
                             }
                     }
                    /* if (clients.openWindow)
-                        */return clients.openWindow('/');
+                        return clients.openWindow('/'); */
 
                 }));
 
