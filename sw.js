@@ -63,7 +63,7 @@ self.addEventListener('notificationclick', function(event) {
                                 return client.focus();
                         }
                     }
-                    if (!client.url === event.notification.data.url)
+                    if (!(client.url === event.notification.data.url))
                         return clients.openWindow(event.notification.data.url);
 
                 }));
