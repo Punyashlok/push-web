@@ -65,6 +65,7 @@ self.addEventListener('notificationclick', function(event) {
                         }
                     }
                     if ((clients.openWindow))
+                        console.log('Inside the else case');
                         return clients.openWindow(event.notification.data.url);
 
                 }));
