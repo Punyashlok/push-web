@@ -49,7 +49,7 @@ self.addEventListener('notificationclick', function(event) {
                // clients.openWindow(event.notification.data.url);
 
 
-                event.notification.close();
+                setTimeout(() => { event.notification.close();}, 3000); // event.notification.close();
 
         }
 
@@ -70,7 +70,7 @@ self.addEventListener('notificationclick', function(event) {
                     return client_tab.focus();
             }
          }
-            if (clientList.some(windowClient => windowClient.url !== event.notification.data.url)) //clients.openWindow
+            if (clients.openWindow) //clients.openWindow
                 return clients.openWindow(event.notification.data.url);
 
         }));
