@@ -68,12 +68,10 @@ self.addEventListener('notificationclick', function(event) {
             {
                 //if(!client_tab.focused)
                     return client_tab.focus();
-            }else{
-                return clients.openWindow(event.notification.data.url);
             }
          }
-            /*if ((clients.openWindow))
-                return clients.openWindow(event.notification.data.url);*/
+            if (clientList.some(windowClient => windowClient.url !== event.notification.data.url)) //clients.openWindow
+                return clients.openWindow(event.notification.data.url);
 
         }));
 
