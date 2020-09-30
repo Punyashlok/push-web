@@ -49,7 +49,7 @@ self.addEventListener('notificationclick', function(event) {
                // clients.openWindow(event.notification.data.url);
 
 
-                setTimeout(() => { event.notification.close();}, 3000); // event.notification.close();
+                setTimeout(() => { event.notification.close();}, 2000); // event.notification.close();
 
         }
 
