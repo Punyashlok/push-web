@@ -64,9 +64,9 @@ self.addEventListener('notificationclick', function(event) {
          {
             var client_tab = clientList[i];
 
-            if (client_tab.url === event.notification.data.url && 'focus' in client_tab) // client.focused
+            if (client_tab.url === event.notification.data.url && !client_tab.focused) // client.focused 'focus' in client
             {
-                if(!client_tab.focused)
+                //if(!client_tab.focused)
                     return client_tab.focus();
             }else{
                 return clients.openWindow(event.notification.data.url);
